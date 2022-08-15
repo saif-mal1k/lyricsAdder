@@ -22,17 +22,18 @@ def create_dir(folder_name='YT_video_projects', projectName=''):
 
 if __name__ == '__main__':
 
-    lyricsToDownload = "https://open.spotify.com/track/58HvfVOeJY7lUuCqF0m3ly"
+    #lyricsToDownload = "https://open.spotify.com/track/6HMtHNpW6YPi1hrw9tgF8P"
 
-    audioToDownload = "https://www.youtube.com/watch?v=CfgcbCe9Z_o"
+    audioToDownload = "https://www.youtube.com/watch?v=Tuwmzdneass"
 
-    videoToDownload = "https://www.youtube.com/watch?v=AjqdoXk4CIk"
+    videoToDownload = "https://www.youtube.com/watch?v=BvOT6L5yVK8"
 
     projectName = "project4"
 
     PATH = create_dir('YT_video_projects', projectName)
 
-    path_to_lyrics = lyricsDownloader.lyricsDownload(lyricsToDownload, PATH)
+    path_to_yt_lyrics = f'{PATH}\\transcript.txt'
+    #path_to_spotify_lyrics = lyricsDownloader.lyricsDownload(lyricsToDownload, PATH)
 
     sleep(18)
     
@@ -48,7 +49,9 @@ if __name__ == '__main__':
 
     sleep(12)
 
-    path_to_final_video = lyricsOnVideoAdder.addLyrics(path_to_music_video, path_to_lyrics, PATH)
+    path_to_final_video = lyricsOnVideoAdder.addYoutubeLyrics(path_to_music_video, path_to_yt_lyrics, PATH)
+    #path_to_final_video = lyricsOnVideoAdder.addSpotifyLyrics(path_to_music_video, path_to_spotify_lyrics, PATH)
+
 
 
 
